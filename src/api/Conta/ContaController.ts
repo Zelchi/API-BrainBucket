@@ -29,7 +29,6 @@ export class ContaController {
             res.status(400).json({ mensagem: "Dados inválidos" });
         } else {
             const token = await contaService.loginConta(email, senha);
-            console.log(token);
             if (token) {
                 res.status(200).json(token);
             } else {
