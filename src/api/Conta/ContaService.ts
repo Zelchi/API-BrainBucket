@@ -2,10 +2,6 @@ import { ContaRepository } from "./ContaRepository";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 
-import dotenv from "dotenv";
-dotenv.config();
-const chave = process.env.KEY as string;
-
 export class ContaService {
     private database: ContaRepository;
     constructor(repository: ContaRepository) {
@@ -28,8 +24,8 @@ export class ContaService {
         const conta = await this.database.buscaConta(email);
         if (conta) {
             if (await bcrypt.compare(senha, conta.senha)) {
-                const token = jwt.sign({ id: conta.id }, chave, { expiresIn: "7d" });
-                return { token: token };
+                const token = jwt.sign({ id: conta.id }, process.env.KEY as string, { expiresIn: "7d" });
+                return { prefix: process.env.PREFIX, token: token };
             } else {
                 return { mensagem: "Senha inválida" };
             }

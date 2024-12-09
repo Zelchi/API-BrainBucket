@@ -10,9 +10,15 @@ export class TarefaEntity {
     conteudo!: string;
     @Column()
     dataCriacao!: Date;
-    @Column()
+    @Column({ nullable: true })
     dataConclusao!: Date;
-    @ManyToOne(() => ContaEntity, (conta) => conta.id)
-    @JoinColumn({ name: "criador_id" })
+    @ManyToOne(() => ContaEntity, (conta) => conta.tarefas)
+    @JoinColumn({ name: "criador" })
     criador!: ContaEntity;
+
+    constructor(conteudo: string, criador: ContaEntity) {
+        this.conteudo = conteudo;
+        this.criador = criador;
+        this.dataCriacao = new Date();
+    }
 }

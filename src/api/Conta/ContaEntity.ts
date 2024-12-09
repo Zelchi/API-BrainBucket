@@ -15,7 +15,6 @@ export class ContaEntity {
     @Column()
     dataCriacao: Date;
     @OneToMany(() => TarefaEntity, (tarefa) => tarefa.criador)
-    @JoinColumn({ name: "tarefa_id" })
     tarefas!: TarefaEntity[];
 
     constructor(nome: string, email: string, senha: string) {
