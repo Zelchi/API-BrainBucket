@@ -11,13 +11,13 @@ export class ContaController {
         const { nome, email, senha } = req.body;
 
         if (!nome || !email || !senha) {
-            res.status(400).json({ mensagem: "Dados inválidos" });
+            res.status(422).json({ mensagem: "Dados inválidos" });
         } else {
             const conta = await contaService.criaConta(nome, email, senha);
             if (conta) {
                 res.status(201).json({ mensagem: "Conta criada com sucesso!" });
             } else {
-                res.status(400).json({ mensagem: "Conta já existente" });
+                res.status(400).json({ mensagem: "Não foi possivel criar sua conta" });
             }
         }
     }
