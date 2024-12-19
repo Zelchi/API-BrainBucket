@@ -30,24 +30,31 @@ Ou, se preferir rodar sem Docker, use o nodemon para desenvolvimento local:
 
 ## 📜 Endpoints
 ### Contas:
-   POST /conta/criar
+   **POST** `/conta/criar` <br>
+   ```json
    {
-      nome,
-      email,
-      senha,
+     "nome": "string",
+     "email": "string",
+     "senha": "string"
    }
-   POST /conta/login
+   ```
+   **POST** `/conta/login` <br>
+   ```json
    {
-      email,
-      senha,
+     "email": "string",
+     "senha": "string"
    }
-
+   ```
 ### Tarefas:
-   AUTH - Bearer Token
-   GET /tarefa/mostrar
-   POST /tarefa/criar
+   **AUTH** - `Bearer Token` <br>
+   **GET** `/tarefa/mostrar` <br>
+   **POST** `/tarefa/criar` <br>
+   ```json
    {
-      conteudo
+      "conteudo": "string"
    }
-   PATCH /tarefa/atualizar
-   DELETE /tarefa/deletar
+   ```
+   **PATCH** `/tarefa/atualizar` <br>
+   **DELETE** `/tarefa/deletar`
+
+   
