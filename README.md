@@ -51,7 +51,7 @@ Ou, se preferir rodar sem Docker, use o nodemon para desenvolvimento local:
    ```json
    {
       "token": "string"
-      "query": "string
+      "query": "string"
    }
    ```
    **POST** `/tarefa/criar` <br>
