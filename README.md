@@ -48,19 +48,32 @@ Ou, se preferir rodar sem Docker, use o nodemon para desenvolvimento local:
 ### Tarefas:
    **AUTH** - `Bearer Token` <br>
    **GET** `/tarefa/mostrar` <br>
+   ```json
+   {
+      "token": "string"
+      "query": "string
+   }
+   ```
    **POST** `/tarefa/criar` <br>
    ```json
    {
+      "token": "string"
       "conteudo": "string"
    }
    ```
    **PATCH** `/tarefa/atualizar` <br>
    ```json
    {
+      "token": "string"
       "id": "string"
       "conteudo": "string"
    }
    ```
    **DELETE** `/tarefa/deletar`
-
+   ```json
+   {
+      "token": "string"
+      "id": "string"
+   }
+   ```
    
