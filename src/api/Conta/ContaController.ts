@@ -25,6 +25,8 @@ export class ContaController {
     loginConta = async (req: Request, res: Response): Promise<void> => {
         const { email, senha } = req.body;
 
+        console.log(email, senha);
+
         if (!email || !senha) {
             res.status(400).json({ mensagem: "Dados inválidos" });
         } else {

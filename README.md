@@ -17,3 +17,12 @@ Brain Bucket é um aplicativo simples e eficiente para gerenciamento de tarefas 
 - **Back-end**: Node.js com TypeScript e Express: [API - Brain Bucket](https://github.com/Zelchi/BrainBucket-API)
 - **Banco de Dados**: SQLite.
 - **Front-end**: HTML, CSS, Javascript e Axios: [Front - Brain Bucket](https://github.com/victorguimaraesdev/BrainBucket-FrontEnd)
+
+Inicie o projeto com Docker: O comando npm run init configura o banco de dados e inicia o ambiente Docker.
+   ```bash
+   npm run init
+   ```
+Ou, se preferir rodar sem Docker, use o nodemon para desenvolvimento local:
+   ```bash
+   npm run dev
+   ```
